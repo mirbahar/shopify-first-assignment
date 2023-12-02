@@ -18,7 +18,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
+            $table->unsignedBigInteger('shop_id');
             $table->smallInteger('status_id')->default(Status::ACTIVE->value);
+            $table->foreign('shop_id')->references('id')->on('users');
             $table->timestamps();
 		});
 	}

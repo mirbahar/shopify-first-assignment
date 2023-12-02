@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\CollectionRepositoryEloquent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class CollectionController extends Controller
@@ -17,7 +18,9 @@ class CollectionController extends Controller
     }
     public function store(Request $request)
     {
+
         $data = $request->all();
+        $data['shop_id'] =  Auth::user()->id;
         $this->repository->create($data);
         $redirectUrl =  getRedirectRoute('collection.list');
         return redirect($redirectUrl);
@@ -38,7 +41,8 @@ class CollectionController extends Controller
 
     public function list()
     {
-        $collections = $this->repository->all();
+        $collections = $this->repository->with('shop')->all();
+
         return view('collection.index', compact('collections'));
     }
 }

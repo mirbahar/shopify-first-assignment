@@ -56,9 +56,9 @@
                 <tr>
                     <th class="py-3 pr-6">name</th>
                     <th class="py-3 pr-6">description</th>
+                    <th class="py-3 pr-6">Shop</th>
                     <th class="py-3 pr-6">status</th>
                     <th class="py-3 pr-6">Action</th>
-{{--                    <th class="py-3 pr-6"></th>--}}
                 </tr>
                 </thead>
                 <tbody class="text-gray-600 divide-y">
@@ -66,6 +66,7 @@
                         <tr>
                             <td class="pr-6 py-4 whitespace-nowrap">{{ $collection['name'] }}</td>
                             <td class="pr-6 py-4 whitespace-nowrap">{{ $collection['description'] }}</td>
+                            <td class="pr-6 py-4 whitespace-nowrap">{{ $collection['shop']['name'] }}</td>
                             <td class="pr-6 py-4 whitespace-nowrap">
                                 <span :class="`px-3 py-2 rounded-full font-semibold text-xs ${$collection['status']  === 1 ? 'text-green-600 bg-green-50' : 'text-blue-600 bg-blue-50'}`" x-text="item.status">{{ $collection['status_id']== 1 ? 'Active' : 'Inactive' }}</span>
                             </td>

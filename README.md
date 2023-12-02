@@ -9,7 +9,7 @@ Welcome to the Shopify App Repository! This Laravel project is specifically craf
 1. [Shopify Basic App Project Initial Setup](#1-shopify-basic-app-initial-setup)
 2. [Database Setup (.env File)](#2-database-setup-env-file)
 3. [Shopify Integration](#3-shopify-integration)
-4. [Product Feature](#4-product-feature)
+4. [Project Feature](#4-project-feature)
 
 ## 1. shopify Basic App initial setup
 
@@ -35,13 +35,13 @@ To set up the Laravel project, follow these steps:
 ```bash
 php artisan migrate
    ```  
-## 3. Shopify Integration with your own App.
+## 3. Shopify Integration.
 3.1. Simply insert your Shopify API Key and Shopify Secret Key into the .env file.
    ```bash
     SHOPIFY_API_KEY=**********************************
     SHOPIFY_API_SECRET=*******************************
    ```
-## 4. Project Feature List.
+## 4. Project Feature.
 4.1 Shop Feature
 ```bash
 Display Shop Name & id into shopifyfy App

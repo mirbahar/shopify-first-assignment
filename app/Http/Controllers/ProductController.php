@@ -51,13 +51,8 @@ class ProductController extends Controller
     }
     public function getProductByCollection($id)
     {
-        $productObj = $this->repository->findByField('collection_id', $id);
+        $products = $this->repository->with('collection')->findByField('collection_id', $id);
 
-        if(count($productObj) <= 0){
-            $products['data'] = [];
-            return view('product.index', compact('products'));
-        }
-        $products = $productObj['data'];
         return view('product.index', compact('products'));
     }
 }

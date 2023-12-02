@@ -47,7 +47,7 @@
                 <p class="text-gray-600 mt-2">Collection Details in here!</p>
             </div>
             <div class="mt-3 md:mt-0">
-                <a href="javascript:void(0)" class="inline-block px-4 py-2 text-white duration-150 font-medium bg-indigo-600 rounded-lg hover:bg-indigo-500 active:bg-indigo-700 md:text-sm">Add product</a>
+                <a href="{{ URL::tokenRoute('collection.form') }}" class="inline-block px-4 py-2 text-white duration-150 font-medium bg-indigo-600 rounded-lg hover:bg-indigo-500 active:bg-indigo-700 md:text-sm">Add Collection</a>
             </div>
         </div>
         <div class="mt-12 relative h-max overflow-auto">
@@ -71,11 +71,10 @@
                             </td>
                             <td class="text-right whitespace-nowrap">
 
-{{--                                <a href="{{ url('/collections/edit') .'/'. $collection['id'] }}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">Edit</a>--}}
                                 <a href="{{ URL::tokenRoute('collection.edit-form', ['id' => $collection['id']]) }}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">Edit</a>
                             </td>
                             <td class="text-right whitespace-nowrap">
-                                <a href="{{ URL::tokenRoute('collection.edit-form', ['id' => $collection['id']]) }}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">Products</a>
+                                <a href="{{ URL::tokenRoute('product.collection', ['id' => $collection['id']]) }}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">Products</a>
                             </td>
                         </tr>
                     @endforeach

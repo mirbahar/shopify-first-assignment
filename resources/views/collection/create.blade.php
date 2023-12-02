@@ -12,7 +12,7 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
                 <input type="text" name="name" id="name" class="form-input w-full @error('name') border-red-500 @enderror"
-                       value="{{ old('name') }}">
+                       value="{{ old('name') }}" required>
                 @error('name')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -21,7 +21,7 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
                 <input type="text" name="description" id="name" class="form-input w-full @error('description') border-red-500 @enderror"
-                       value="{{ old('description') }}">
+                       value="{{ old('description') }}" required>
                 @error('description')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror

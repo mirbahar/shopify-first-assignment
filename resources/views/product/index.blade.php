@@ -59,7 +59,6 @@
                     <th class="py-3 pr-6">collection</th>
                     <th class="py-3 pr-6">status</th>
                     <th class="py-3 pr-6">Action</th>
-{{--                    <th class="py-3 pr-6"></th>--}}
                 </tr>
                 </thead>
                 <tbody class="text-gray-600 divide-y">
@@ -73,9 +72,6 @@
                             </td>
                             <td class="text-right whitespace-nowrap">
                                 <a href="{{ URL::tokenRoute('product.edit-form', ['id' => $product['id']]) }}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">Edit</a>
-                            </td>
-                            <td class="text-right whitespace-nowrap">
-                                <a href="{{ URL::tokenRoute('product.collection', ['id' => $product['collection_id']]) }}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">Products</a>
                             </td>
                         </tr>
                     @endforeach

@@ -9,9 +9,20 @@
         <form action="{{ url('/products') }}" method="post" class="w-1/2">
             <!-- Other form fields go here -->
             @sessionToken
+
+            @if ($errors->any())
+                <div style="color: red;">
+                    <strong>Whoops! Something went wrong!</strong>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="mb-4">
                 <label for="collection" class="block text-gray-700 text-sm font-bold mb-2">Select Collection</label>
-                <select name="collection_id" id="collection" class="form-select w-full @error('collection_id') border-red-500 @enderror">
+                <select name="collection_id" id="collection" class="form-select w-full @error('collection_id') border-red-500 @enderror" required>
                     <option value="" selected disabled>Select a Collection</option>
                     <!-- Loop through your collections and create an option for each one -->
                     @foreach ($collections as $collection)
@@ -28,7 +39,7 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
                 <input type="text" name="name" id="name" class="form-input w-full @error('name') border-red-500 @enderror"
-                       value="{{ old('name') }}">
+                       value="{{ old('name') }}" required>
                 @error('name')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -37,7 +48,7 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
                 <input type="text" name="description" id="name" class="form-input w-full @error('description') border-red-500 @enderror"
-                       value="{{ old('description') }}">
+                       value="{{ old('description') }}" required>
                 @error('description')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror

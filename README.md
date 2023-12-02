@@ -32,9 +32,9 @@ To set up the Laravel project, follow these steps:
     DB_PASSWORD=Mysql@123
    ```
 2.2 Run the migration command
-    ```bash
-        php artisan migrate
-    ```
+```bash
+php artisan migrate
+   ```  
 ## 3. Shopify Integration with your own App.
 3.1. Simply insert your Shopify API Key and Shopify Secret Key into the .env file.
    ```bash

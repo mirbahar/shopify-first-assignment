@@ -57,3 +57,30 @@ Product Creation
 Product Listing
 Get All Product By Collection
    ```
+## ** Shopify App Theme extension Multigual Store Trsnlator.
+step 1: process
+```bash
+create project inot root directory name app_extension
+agian fie created into app_extesion folder called is package.json
+sample file:
+{
+    "name": "multigual-app-extension",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "shopify": "shopify",
+        "build": "shopify app build",
+        "dev": "shopify app dev",
+        "info": "shopify app info",
+        "scaffold": "shopify app generate extension",
+        "deploy": "shopify app deploy"
+    },
+    "dependencies": {
+        "@shopify/app": "^3.52",
+        "@shopify/cli": "^3.52"
+    }
+}
+run npm install
+and then run npm run dev
+and then use theme extension in your store
+```

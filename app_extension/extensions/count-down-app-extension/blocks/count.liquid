@@ -1,0 +1,30 @@
+
+<div id="countdown-timer">
+    <div class="timer"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script src="{{ 'scripts.js' | asset_url }}" defer></script>
+<style type="text/css">
+    #countdown-timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .timer {
+        font-size: 24px;
+        color: #ffffff;
+        background-color: #333333;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+</style>
+{% schema %}
+{
+    "name": "Count Down",
+    "target": "section"
+}
+{% endschema %}
+
